@@ -4,13 +4,14 @@ require "./php/Common.php";
 $test = new Common();
 $list = null;                 //テーブル名リスト
 $tbal = null;
-/*      PG用
+/*      PG用	*/
 $sql = "select pg_statio_user_tables.relname
 			from pg_catalog.pg_class,pg_catalog.pg_statio_user_tables
 			where relkind='r'
 			and pg_catalog.pg_statio_user_tables.relid=pg_catalog.pg_class.relfilenode;";
-*/
-$sql = "show tables from toilet;";
+
+/* MySQL用 */
+//$sql = "show tables from toilet;";
 
 
 
