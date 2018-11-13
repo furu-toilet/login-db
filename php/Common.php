@@ -5,7 +5,7 @@ Class Common {
   private $stmt = null;         //PDOStatmant
   private $sql = null;          //SQL
   private $errmsg = null;       //エラーメッセージ
-  private $flg = true;          //環境設定FLG true or false
+  private $flg = false;          //環境設定FLG true or false
 
   function Common(){
     /* $flg=trueならローカルMySQlで接続 */
