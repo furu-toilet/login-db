@@ -27,8 +27,8 @@ function h($str){
 
 $cnt = 0;
 foreach($tbal as $value){		//配列を調整
-        //$list[$cnt] = $value['relname'];    //Postgres用
-        $list[$cnt] = $value['Tables_in_toilet'];    //Postgres用
+        $list[$cnt] = $value['relname'];    //Postgres用
+        //$list[$cnt] = $value['Tables_in_toilet'];    //MySQL用
         $cnt++;
 }
 
