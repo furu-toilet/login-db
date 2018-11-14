@@ -46,10 +46,22 @@ foreach($tbal as $value){		//配列を調整
     <link rel="stylesheet" href="./css/style_left.css">
   </head>
   <body>
+　<script>
+	function showClock1() {
+		var nowTime = new Date();
+		var nowHour = nowTime.getHours();
+		var nowMin  = nowTime.getMinutes();
+		var nowSec  = nowTime.getSeconds();
+		var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+		document.getElementById("RealtimeClockArea").innerHTML = msg;
+	}
+	setInterval('showClock1()',1000);
+  </script>
   <div id="left">
     <div id="file">
       <h3>ファイル</h3>
       <div class="button">
+	<p id="RealtimeClockArea"></p>
         <input class="left-in" type="submit" name="export" value="エクスポート">
         <input class="left-in" type="submit" name="import" value="インポート">
       </div>
