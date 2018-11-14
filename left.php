@@ -59,16 +59,17 @@ foreach($tbal as $value){		//配列を調整
 		var nowHour = set2fig( nowTime.getHours() );
 		var nowMin  = set2fig( nowTime.getMinutes() );
 		var nowSec  = set2fig( nowTime.getSeconds() );
-		var msg = "現在時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+		var msg = nowHour + ":" + nowMin + ":" + nowSec;
 		document.getElementById("RealtimeClockArea2").innerHTML = msg;
 	}
 	setInterval('showClock2()',1000);
   </script>
   <div id="left">
+    <h3>現在の時刻</h3>
+    <p id="RealtimeClockArea2"></p>
     <div id="file">
       <h3>ファイル</h3>
       <div class="button">
-	<p id="RealtimeClockArea"></p>
         <input class="left-in" type="submit" name="export" value="エクスポート">
         <input class="left-in" type="submit" name="import" value="インポート">
       </div>
