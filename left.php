@@ -66,7 +66,7 @@ foreach($tbal as $value){		//配列を調整
   </script>
   <div id="left">
     <h3>現在の時刻</h3>
-    <p id="RealtimeClockArea2"></p>
+    <h3 id="RealtimeClockArea2"></h3>
     <div id="file">
       <h3>ファイル</h3>
       <div class="button">
