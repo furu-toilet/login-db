@@ -66,7 +66,9 @@ function time_menu(){
 		</form>
       <div id="log">
         <h2>実行結果</h2>
-        <!--textarea class="log" rows=20 cols=60-->
+		</div>
+	</div>
+
 <?php if(!empty($_POST['sql'])){           //SQL実行した場合?>       
           <?=h('実行SQL：' . $_POST['sql'])?>	
 	  <br>
@@ -92,8 +94,6 @@ function time_menu(){
     <?php }   //else end  ?>
           
 <?php } ?>          
-        <!--/textarea-->
-		</div>
-	</div>
+
 </body>
 </html>
