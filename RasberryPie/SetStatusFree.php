@@ -9,7 +9,7 @@ Common.phpとこのファイルは同一ディレクトリに保存してくだ�
 require_once "Common.php";      //～～おまじない～～
 $db = new Common();             //
 
-$sql = 'UPDATE "ToiletTerminal" SET"Status" =  0';      //DBManagerからSQL文が決まったらここに入力！
+$sql = 'UPDATE "ToiletTerminal" SET"Status" =  1';      //DBManagerからSQL文が決まったらここに入力！
 
 if($status !== 0){   //在室ならDBを操作しない（誤作動の可能性を考慮）
     $sql = "UPDATE "ToiletTerminal" SET"Status" =  0";      //DBManagerからSQL文が決まったらここに入力！
