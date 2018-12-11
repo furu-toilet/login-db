@@ -17,5 +17,7 @@ if($status !== -1){   //在室ならDBを操作しない（誤作動の可能性
     $db->db_sql($sql);    //状態のセット実行
 }
 
+console.log("Exit Set OK");
+
 $db->db_close();
 ?>
