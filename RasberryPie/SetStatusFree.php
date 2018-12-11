@@ -16,7 +16,7 @@ if($status !== 0){   //在室ならDBを操作しない（誤作動の可能性�
     $sql = 'UPDATE "ToiletTerminal" SET "Status" = 0,"UpdateTime" = CURRENT_TimeStamp + \'9 hours\'';      //DBManagerからSQL文が決まったらここに入力！ 現在のトイレの状態を変化させるクエリ
     $db->db_sql($sql);    //状態のセット実行
 }
-console.log(Free Set OK);
+console.log("Free Set OK");
 
 $db->db_close();
 ?>
