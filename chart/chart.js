@@ -20,7 +20,7 @@ function chartstart(){
           console.log(test);
           //document.write(success);
           google.setOnLoadCallback(drawChart);
-          
+          console.log("drawChart OK?");
       },
     ).catch(function () {
         console.log("promise error");
