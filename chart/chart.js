@@ -34,7 +34,7 @@ function RequestStart(url){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
-          console.log(resolve);
+          console.log(JSON.parse(resolve));
       }else if(xhr.status === 404){
         console.log(reject);
         reject("Err : Not Found");
