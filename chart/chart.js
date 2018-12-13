@@ -2,7 +2,7 @@ var datalist1;
 var datalist2;
 var datalist3;
 var datalist4;
-
+console.log("js read start");
 
 
 google.load('visualization', '1', {'packages':['corechart']});
@@ -13,6 +13,7 @@ function chartstart(){
       RequestStart('./chart02.php')
       ]).then(
       success => {
+          console.log("promise start");
           //console.log(success);
           //datalist1 = JSON.parse(success[0]);
           datalist1 = success;
@@ -43,6 +44,7 @@ function RequestStart(url){
 }
 
 function drawChart(){
+    console.log("drawchart start");
     var data1  = google.visualization.arrayToDataTable(JSON.parse(datalist1));      //可視化データのセット
     var option1 = {
               title : '2ヶ月累積データ',
