@@ -47,7 +47,7 @@ function drawChart(){
     var option1 = {
               title : '2ヶ月累積データ',
              series: {
-              0:{targetAxisIndex:0}    // 第1系列は左のY軸を使用
+              0:{targetAxisIndex:0}     // 第1系列は左のY軸を使用
              },
              hAxis: {title: '時間帯'},
              vAxes: {
