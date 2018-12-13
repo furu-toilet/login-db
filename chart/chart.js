@@ -15,9 +15,9 @@ function chartstart(){
       success => {
           console.log("promise start");
           //console.log(success);
-          //datalist1 = JSON.parse(success[0]);
+          var test = JSON.parse(success);
           datalist1 = success;
-          //console.log(datalist1);
+          console.log(test);
           //document.write(success);
           google.setOnLoadCallback(drawChart);
       },
@@ -34,7 +34,7 @@ function RequestStart(url){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
-          console.log(JSON.parse(resolve));
+          //console.log(JSON.parse(resolve));
       }else if(xhr.status === 404){
         console.log(reject);
         reject("Err : Not Found");
