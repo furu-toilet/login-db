@@ -7,7 +7,7 @@ console.log("js read start");
 
 google.load('visualization', '1', {'packages':['corechart']});
 chartstart();
-
+drawChart(datalist1);
 function chartstart(){
     Promise.all([
       RequestStart('./chart02.php')
