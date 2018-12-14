@@ -4,10 +4,11 @@ var datalist3;
 var datalist4;
 console.log("js read start");
 
+drawChart();
 
 google.load('visualization', '1', {'packages':['corechart']});
 chartstart();
-drawChart(datalist1);
+
 function chartstart(){
     Promise.all([
       RequestStart('./chart02.php')
