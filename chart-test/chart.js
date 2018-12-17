@@ -45,17 +45,17 @@ function RequestStart(url){
 function drawChart(){
     var data1  = google.visualization.arrayToDataTable(JSON.parse(datalist1));      //可視化データのセット
     var option1 = {
-              title : '2ヶ月累積データ',
+              title : '2Month RuiData',
              series: {
               0:{targetAxisIndex:0},     // 第1系列は左のY軸を使用
               1:{targetAxisIndex:1,
                type: "line"},         // 第2系列は右のY時を使用
              },
-             hAxis: {title: '時間帯'},
+             hAxis: {title: 'TimeZone'},
              vAxes: {
                // 0:左のY軸。1:右のY軸
-               0: {title: '回数'},
-               1: {title: '時間[分]'}
+               0: {title: 'Count'},
+               1: {title: 'Time Minits'}
              },
            };
     
