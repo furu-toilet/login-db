@@ -13,12 +13,14 @@ function chartstart(){
       RequestStart('./chart02.php')
       ]).then(
       success => {
+          console.log('Promise.all Success!!');
           //console.log(success);
           //datalist1 = JSON.parse(success[0]);
           datalist1 = success;
           //console.log(datalist1);
           //document.write(success);
           google.setOnLoadCallback(drawChart);
+          console.log('drawChart Tyring?');
       },
     )
 }
@@ -43,6 +45,7 @@ function RequestStart(url){
 }
 
 function drawChart(){
+    console.log('drawChart Start');
     var data1  = google.visualization.arrayToDataTable(JSON.parse(datalist1));      //可視化データのセット
     var option1 = {
               title : '2Month RuiData',
