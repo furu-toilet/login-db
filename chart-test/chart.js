@@ -17,7 +17,7 @@ function chartstart(){
           //console.log(success);
           //datalist1 = JSON.parse(success[0]);
           datalist1 = success;
-          //console.log(datalist1);
+          console.log(datalist1);
           //document.write(success);
           google.setOnLoadCallback(drawChart);
           console.log("drawChart Tyring?");
