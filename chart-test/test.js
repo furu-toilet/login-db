@@ -13,8 +13,9 @@ RequestStart("./chart02.php")
 
 if(RequestStart("./chart02.php") == 1){
       LoadingEX();
-}else{
+}else {
     console.log("ERR");
+    LoadingEX();
 }
 
 /*
