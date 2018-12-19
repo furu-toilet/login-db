@@ -1,5 +1,5 @@
     console.log("test.js start");
-    
+    var data;
     // ライブラリのロード
     // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
       google.load('visualization', '1', {'packages':['corechart']});
@@ -29,7 +29,7 @@
        ['19:00'    ,10    ,13    ],
        ]);
         */
-        var data;
+        //var data;
         RequestStart("./chart02.php");
         
        // オプションの設定
