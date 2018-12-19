@@ -56,3 +56,24 @@
 
 
  }
+
+
+var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState ===4 && xhr.status === 200){
+        var responsedata = xhr.responseText;
+        //resolve(JSON.parse(responsedata));
+          resolve(responsedata);
+          console.log(responsedata);
+      }else if(xhr.status === 404){
+        console.log(reject);
+        reject("Err : Not Found");
+      }
+    }    
+    xhr.open("GET",url,true);
+    xhr.send(null);
+  }
+
+
+
+
