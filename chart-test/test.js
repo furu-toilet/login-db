@@ -21,7 +21,7 @@ function RequestStart(url){
           //data = responsedata;
           //google.load('visualization', '1', {'packages':['corechart']});
           //google.setOnLoadCallback(drawChart);
-          LoadingEX();
+          //LoadingEX();
           console.log(responsedata);
       }else if(xhr.status === 404){
         console.log(reject);
