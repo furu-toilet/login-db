@@ -11,7 +11,7 @@ RequestStart("./chart02.php")
 .then(LoadingEX)
 */
 
-if(RequestStart == 1){
+if(RequestStart("./chart02.php") == 1){
       LoadingEX();
 }else{
     console.log("ERR");
