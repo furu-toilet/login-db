@@ -18,7 +18,7 @@ function RequestStart(url){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
-          data = responsedata;
+          //data = responsedata;
           google.load('visualization', '1', {'packages':['corechart']});
           google.setOnLoadCallback(drawChart);
           console.log(responsedata);
@@ -35,7 +35,7 @@ function RequestStart(url){
 function drawChart() {
 
      // 配列からデータの生成
-        /*
+        
      var data = google.visualization.arrayToDataTable([
        ['時間帯'    , '回数', '時間-分'],
        ['06:00'    ,0    ,0    ],
@@ -53,9 +53,7 @@ function drawChart() {
        ['18:00'    ,65    ,76    ],
        ['19:00'    ,10    ,13    ],
        ]);
-        */
-        //var data;
-        //RequestStart("./chart02.php");
+        
         
        // オプションの設定
     var options = {
@@ -74,12 +72,10 @@ function drawChart() {
    };
 
    // 指定されたIDの要素に棒グラフを作成
-   // var chart1 = new google.visualization.ColumnChart(document.getElementById('chart_div1'));
    var chart2 = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
-    //var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
 
    //グラフの描画
-  // chart1.draw(data, options);
   chart2.draw(data, options);
 
 
