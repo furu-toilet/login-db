@@ -50,7 +50,6 @@ function RequestStart(url){
       if(xhr.readyState ===4 && xhr.status === 200){
           datalist = xhr.responseText;
           result = 1;
-          //data = responsedata;
           //google.setOnLoadCallback(drawChart);
           //LoadingEX();
           console.log(datalist);
@@ -65,11 +64,9 @@ function RequestStart(url){
 }
   
 function drawChart() {
-    
-    var data = google.visualization.arrayToDataTable(datalist);
 
      // 配列からデータの生成
-        /*
+        
      var data = google.visualization.arrayToDataTable([
        ['時間帯'    , '回数', '時間-分'],
        ['06:00'    ,0    ,0    ],
@@ -87,7 +84,7 @@ function drawChart() {
        ['18:00'    ,65    ,76    ],
        ['19:00'    ,10    ,13    ],
        ]);
-        */
+        
         
        // オプションの設定
     var options = {
