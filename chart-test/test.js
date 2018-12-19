@@ -57,7 +57,8 @@
 
  }
 
-
+function RequestStart(url){       
+  return new Promise((resolve,reject) => {
 var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){
@@ -73,6 +74,8 @@ var xhr = new XMLHttpRequest();
     }    
     xhr.open("GET","./chart02.php",true);
     xhr.send(null);
+      });
+}
   
 
 
