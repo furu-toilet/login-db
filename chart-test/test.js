@@ -6,10 +6,16 @@
     // グラフを描画する為のコールバック関数を指定
     //google.setOnLoadCallback(drawChart);
     // グラフの描画
-
+/*
 RequestStart("./chart02.php")
 .then(LoadingEX)
-    
+*/
+
+if(RequestStart === "SUCCESS"){
+      LoadingEX();
+}
+
+/*
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
     var xhr = new XMLHttpRequest();
@@ -17,20 +23,41 @@ function RequestStart(url){
       if(xhr.readyState ===4 && xhr.status === 200){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
-          resolve(responsedata);
+          resolve("SUCCESS");
           //data = responsedata;
-          //google.load('visualization', '1', {'packages':['corechart']});
           //google.setOnLoadCallback(drawChart);
           //LoadingEX();
           console.log(responsedata);
       }else if(xhr.status === 404){
-        console.log(reject);
-        reject("Err : Not Found");
+        console.log("Err : Not Found");
+        reject("ERR");
       }
     }    
     xhr.open("GET",url,true);
     xhr.send(null);
       });
+}
+*/
+
+function RequestStart(url){       
+    var xhr = new XMLHttpRequest();
+    var result;
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState ===4 && xhr.status === 200){
+          var responsedata = xhr.responseText;
+          result("SUCCESS");
+          //data = responsedata;
+          //google.setOnLoadCallback(drawChart);
+          //LoadingEX();
+          console.log(responsedata);
+      }else if(xhr.status === 404){
+          console.log("Err : Not Found");
+          result("ERR");
+      }
+    }    
+    xhr.open("GET",url,true);
+    xhr.send(null);
+    return result;
 }
   
 function drawChart() {
