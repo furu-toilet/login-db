@@ -19,7 +19,8 @@ function RequestStart(url){
           resolve(responsedata);
           //data = responsedata;
           //google.load('visualization', '1', {'packages':['corechart']});
-          google.setOnLoadCallback(drawChart);
+          //google.setOnLoadCallback(drawChart);
+          LoadingEX();
           console.log(responsedata);
       }else if(xhr.status === 404){
         console.log(reject);
@@ -79,7 +80,11 @@ function drawChart() {
 
 
  }
-
+function　LoadingEX(){
+    console.log("start!");
+    console.log("loading!");
+    console.log("excute!");
+}
 
 
 
