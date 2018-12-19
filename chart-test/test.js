@@ -7,7 +7,29 @@
     // グラフを描画する為のコールバック関数を指定
     //google.setOnLoadCallback(drawChart);
     // グラフの描画
-    function drawChart() {
+    
+function RequestStart(url){       
+  return new Promise((resolve,reject) => {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+      if(xhr.readyState ===4 && xhr.status === 200){
+        var responsedata = xhr.responseText;
+        //resolve(JSON.parse(responsedata));
+          resolve(responsedata);
+          data = responsedata;
+          google.setOnLoadCallback(drawChart);
+          console.log(responsedata);
+      }else if(xhr.status === 404){
+        console.log(reject);
+        reject("Err : Not Found");
+      }
+    }    
+    xhr.open("GET",url,true);
+    xhr.send(null);
+      });
+}
+  
+function drawChart() {
 
      // 配列からデータの生成
         /*
@@ -59,28 +81,6 @@
 
 
  }
-
-function RequestStart(url){       
-  return new Promise((resolve,reject) => {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-      if(xhr.readyState ===4 && xhr.status === 200){
-        var responsedata = xhr.responseText;
-        //resolve(JSON.parse(responsedata));
-          resolve(responsedata);
-          data = responsedata;
-          google.setOnLoadCallback(drawChart);
-          console.log(responsedata);
-      }else if(xhr.status === 404){
-        console.log(reject);
-        reject("Err : Not Found");
-      }
-    }    
-    xhr.open("GET",url,true);
-    xhr.send(null);
-      });
-}
-  
 
 
 
