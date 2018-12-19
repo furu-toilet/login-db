@@ -59,17 +59,16 @@
 
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
-var xhr = new XMLHttpRequest();
+    var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
-          //resolve(responsedata);
+          resolve(responsedata);
           console.log(responsedata);
       }else if(xhr.status === 404){
-          console.log("Err");
-        //console.log(reject);
-        //reject("Err : Not Found");
+        console.log(reject);
+        reject("Err : Not Found");
       }
     }    
     xhr.open("GET","./chart02.php",true);
