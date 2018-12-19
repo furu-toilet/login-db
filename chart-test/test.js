@@ -10,6 +10,7 @@
     function drawChart() {
 
      // 配列からデータの生成
+        /*
      var data = google.visualization.arrayToDataTable([
        ['時間帯'    , '回数', '時間-分'],
        ['06:00'    ,0    ,0    ],
@@ -27,7 +28,9 @@
        ['18:00'    ,65    ,76    ],
        ['19:00'    ,10    ,13    ],
        ]);
-        
+        */
+        var data;
+        RequestStart("./chart02.php");
         
        // オプションの設定
     var options = {
@@ -65,13 +68,14 @@ function RequestStart(url){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
+          data = responsedata;
           console.log(responsedata);
       }else if(xhr.status === 404){
         console.log(reject);
         reject("Err : Not Found");
       }
     }    
-    xhr.open("GET","./chart02.php",true);
+    xhr.open("GET",url,true);
     xhr.send(null);
       });
 }
