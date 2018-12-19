@@ -1,4 +1,6 @@
-// ライブラリのロード
+    console.log("test.js start");
+    
+    // ライブラリのロード
     // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
       google.load('visualization', '1', {'packages':['corechart']});
 
