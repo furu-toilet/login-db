@@ -1,10 +1,10 @@
     console.log("test.js start");
     // ライブラリのロード
     // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
-      //google.load('visualization', '1', {'packages':['corechart']});
+      google.load('visualization', '1', {'packages':['corechart']});
 
     // グラフを描画する為のコールバック関数を指定
-    //google.setOnLoadCallback(drawChart);
+    google.setOnLoadCallback(drawChart);
     // グラフの描画
 
 RequestStart("./chart02.php");
@@ -18,8 +18,8 @@ function RequestStart(url){
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
           //data = responsedata;
-          google.load('visualization', '1', {'packages':['corechart']});
-          google.setOnLoadCallback(drawChart);
+          //google.load('visualization', '1', {'packages':['corechart']});
+          //google.setOnLoadCallback(drawChart);
           console.log(responsedata);
       }else if(xhr.status === 404){
         console.log(reject);
