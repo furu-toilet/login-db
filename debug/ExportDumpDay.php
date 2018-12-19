@@ -1,5 +1,5 @@
 <?php
-require_once "./php/../Common.php";
+require_once "./../php/Common.php";
 $db = new Common();
 
 $sql = "select * from \"ToiletTerminal\"";
