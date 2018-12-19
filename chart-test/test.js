@@ -5,7 +5,7 @@
       google.load('visualization', '1', {'packages':['corechart']});
 
     // グラフを描画する為のコールバック関数を指定
-    google.setOnLoadCallback(drawChart);
+    //google.setOnLoadCallback(drawChart);
     // グラフの描画
     function drawChart() {
 
@@ -69,6 +69,7 @@ function RequestStart(url){
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
           data = responsedata;
+          google.setOnLoadCallback(drawChart);
           console.log(responsedata);
       }else if(xhr.status === 404){
         console.log(reject);
