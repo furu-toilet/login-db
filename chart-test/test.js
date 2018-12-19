@@ -1,4 +1,5 @@
     console.log("test.js start");
+    var data;
     // ライブラリのロード
     // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
       google.load('visualization', '1', {'packages':['corechart']});
@@ -48,6 +49,7 @@ function RequestStart(url){
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){
           var responsedata = xhr.responseText;
+          data = data = google.visualization.arrayToDataTable(responsedata);
           result = 1;
           //data = responsedata;
           //google.setOnLoadCallback(drawChart);
@@ -66,7 +68,7 @@ function RequestStart(url){
 function drawChart() {
 
      // 配列からデータの生成
-        
+        /*
      var data = google.visualization.arrayToDataTable([
        ['時間帯'    , '回数', '時間-分'],
        ['06:00'    ,0    ,0    ],
@@ -84,7 +86,7 @@ function drawChart() {
        ['18:00'    ,65    ,76    ],
        ['19:00'    ,10    ,13    ],
        ]);
-        
+        */
         
        // オプションの設定
     var options = {
