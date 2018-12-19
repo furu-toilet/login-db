@@ -70,7 +70,7 @@ var xhr = new XMLHttpRequest();
         reject("Err : Not Found");
       }
     }    
-    xhr.open("GET",url,true);
+    xhr.open("GET","./chart02.php",true);
     xhr.send(null);
   
 
