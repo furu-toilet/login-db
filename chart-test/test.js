@@ -110,13 +110,17 @@ function drawChart() {
 
 
  }
-
+/*
 function LoadingEX(){
     return new Promise((resolve,reject) => {
         google.setOnLoadCallback(drawChart);
         resolve("chart drawing!!");
     })
 }
+*/
 
+function LoadingEX(){
+        google.setOnLoadCallback(drawChart);
+}
 
 
