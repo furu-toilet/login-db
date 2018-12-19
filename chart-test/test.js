@@ -83,6 +83,7 @@ function drawChart() {
 function　LoadingEX(){
     console.log("start!");
     console.log("loading!");
+    google.setOnLoadCallback(drawChart);
     console.log("excute!");
 }
 
