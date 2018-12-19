@@ -6,8 +6,8 @@
     // グラフを描画する為のコールバック関数を指定
     //google.setOnLoadCallback(drawChart);
     // グラフの描画
-
-RequestStart("./chart02.php");
+loadingEX();
+//RequestStart("./chart02.php");
     
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
