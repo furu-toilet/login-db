@@ -11,7 +11,7 @@ RequestStart("./chart02.php")
 .then(LoadingEX)
 */
 
-if(RequestStart === "SUCCESS"){
+if(RequestStart == 1){
       LoadingEX();
 }else{
     console.log("ERR");
@@ -47,14 +47,14 @@ function RequestStart(url){
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){
           var responsedata = xhr.responseText;
-          result("SUCCESS");
+          result = 1;
           //data = responsedata;
           //google.setOnLoadCallback(drawChart);
           //LoadingEX();
           console.log(responsedata);
       }else if(xhr.status === 404){
           console.log("Err : Not Found");
-          result("ERR");
+          result = 0;
       }
     }    
     xhr.open("GET",url,true);
