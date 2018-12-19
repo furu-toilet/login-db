@@ -1,5 +1,5 @@
     console.log("test.js start");
-    var data;
+    var datalist;
     // ライブラリのロード
     // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
       google.load('visualization', '1', {'packages':['corechart']});
@@ -48,13 +48,12 @@ function RequestStart(url){
     var result;
     xhr.onreadystatechange = function(){
       if(xhr.readyState ===4 && xhr.status === 200){
-          var responsedata = xhr.responseText;
-          data = data = google.visualization.arrayToDataTable(responsedata);
+          datalist = xhr.responseText;
           result = 1;
           //data = responsedata;
           //google.setOnLoadCallback(drawChart);
           //LoadingEX();
-          console.log(responsedata);
+          console.log(datalist);
       }else if(xhr.status === 404){
           console.log("Err : Not Found");
           result = 0;
@@ -66,6 +65,8 @@ function RequestStart(url){
 }
   
 function drawChart() {
+    
+    var data = google.visualization.arrayToDataTable(datalist);
 
      // 配列からデータの生成
         /*
