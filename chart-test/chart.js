@@ -37,7 +37,7 @@ google.setOnLoadCallback(function(){
           datalist1 = success;
           console.log(datalist1);
           //document.write(success);
-          google.setOnLoadCallback(drawChart);
+          drawChart();
           console.log("drawChart Tyring?");
       },
     )
