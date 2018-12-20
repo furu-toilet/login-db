@@ -7,7 +7,7 @@ console.log("chart js loading start");
 
 google.load('visualization', '1', {'packages':['corechart']});
 chartstart();
-
+/*
 function chartstart(){
     Promise.all([
       RequestStart('./chart02.php')
@@ -24,6 +24,24 @@ function chartstart(){
       },
     )
 }
+*/
+
+google.setOnLoadCallback(function(){
+    Promise.all([
+      RequestStart('./chart02.php')
+      ]).then(
+      success => {
+          console.log("Promise.all Success!!");
+          //console.log(success);
+          //datalist1 = JSON.parse(success[0]);
+          datalist1 = success;
+          console.log(datalist1);
+          //document.write(success);
+          google.setOnLoadCallback(drawChart);
+          console.log("drawChart Tyring?");
+      },
+    )
+});
 
 
 function RequestStart(url){       
