@@ -25,7 +25,7 @@ function chartstart(){
     )
 }
 */
-
+/*
 google.setOnLoadCallback(function(){
     Promise.all([
       RequestStart('./chart02.php')
@@ -42,7 +42,15 @@ google.setOnLoadCallback(function(){
       },
     )
 });
+*/
 
+RequestStart('./chart02.php');
+
+google.setOnLoadCallback(function(){
+    console.log("test log");
+    setTimeout('drawChart()', 3*1000);
+    //google.setOnLoadCallback(drawChart);
+});
 
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
@@ -52,6 +60,7 @@ function RequestStart(url){
         var responsedata = xhr.responseText;
         //resolve(JSON.parse(responsedata));
           resolve(responsedata);
+          datalist1 = responsedata;
       }else if(xhr.status === 404){
         console.log(reject);
         reject("Err : Not Found");
