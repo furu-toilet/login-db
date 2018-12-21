@@ -48,7 +48,7 @@ RequestStart('./chart02.php');
 
 google.setOnLoadCallback(function(){
     console.log("test log");
-    setTimeout('drawChart()', 3*1000);
+    setTimeout('drawChart()', 1*1000);
     //google.setOnLoadCallback(drawChart);
 });
 
