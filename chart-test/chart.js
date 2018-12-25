@@ -22,7 +22,7 @@ function chartstart(){
           //document.write(success);
           //google.setOnLoadCallback(drawChart);
           //console.log("drawChart Tyring?");
-      },
+      }
     ))
 }
 
