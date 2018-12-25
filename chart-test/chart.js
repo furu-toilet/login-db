@@ -6,7 +6,7 @@ var datalist4;
 console.log("chart js loading start");
 
 google.load('visualization', '1', {'packages':['corechart']});
-chartstart();
+//chartstart();
 /*
 function chartstart(){
     Promise.all([
