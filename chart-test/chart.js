@@ -6,8 +6,8 @@ var datalist4;
 console.log("chart js loading start");
 
 google.load('visualization', '1', {'packages':['corechart']});
-//chartstart();
-/*
+chartstart();
+
 function chartstart(){
     Promise.all([
       RequestStart('./chart02.php')
@@ -16,15 +16,15 @@ function chartstart(){
           console.log("Promise.all Success!!");
           //console.log(success);
           //datalist1 = JSON.parse(success[0]);
-          datalist1 = success;
-          console.log(datalist1);
+          //datalist1 = success;
+          //console.log(datalist1);
           //document.write(success);
           google.setOnLoadCallback(drawChart);
-          console.log("drawChart Tyring?");
+          //console.log("drawChart Tyring?");
       },
     )
 }
-*/
+
 /*
 google.setOnLoadCallback(function(){
     Promise.all([
@@ -44,14 +44,14 @@ google.setOnLoadCallback(function(){
 });
 */
 
-RequestStart('./chart02.php');
-
+//RequestStart('./chart02.php');
+/*
 google.setOnLoadCallback(function(){
     console.log("test log");
     setTimeout('drawChart()', 1*1000);
     //google.setOnLoadCallback(drawChart);
 });
-
+*/
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
     var xhr = new XMLHttpRequest();
