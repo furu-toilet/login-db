@@ -46,6 +46,7 @@ textarea {
 }
 
 .button{
+  text-align: right;
   margin-bottom: 30px;
   margin-top: 20px;
 }
