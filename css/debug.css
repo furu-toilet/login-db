@@ -33,6 +33,8 @@ header {
 
 button:hover {
   background-color: #676767;
+  margin-bottom: 30px;
+  margin-top: 20px;
 }
 .sendarea {
   height: 380px;
