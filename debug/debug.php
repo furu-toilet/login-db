@@ -1,5 +1,5 @@
 <?php
-require_once "./Common.php";
+require_once "../php/Common.php";
 $db = new Common();
 
 header('Content-type: text/plain; charset= UTF-8');
