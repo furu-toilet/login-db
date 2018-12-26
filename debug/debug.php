@@ -8,9 +8,12 @@ if(isset($_POST['sql'])){
     $sql = $_POST['sql'];
     $str = "\n\n\nAJAX REQUEST SUCCESS\nSQL:".$sql."\n";
     
-    $dump = "\n".var_dump($db->db_sql($sql));
-    if($dump == "NULL"){
-        $dump = "該当データなし";
+    $data = $db->db_sql($sql);
+    
+    if($data == null){
+        $dump = "\n"."該当データなし";
+    }else {
+        $dump = "\n".var_dump($data);
     }
     $result = nl2br($str);
     echo $result;
