@@ -34,7 +34,9 @@ header {
 input:hover {
   background-color: #676767;
 }
-
+.sendarea {
+  height: 380px;
+}
 textarea {
   text-align: left;
   width: 30%;
@@ -49,4 +51,10 @@ textarea {
   background-color: #676767;
   margin-bottom: 30px;
   margin-top: 20px;
+}
+
+.inputarea{
+  text-align: right;
+  padding-top: 7px;
+  padding-bottom: 13px;
 }
