@@ -31,7 +31,7 @@ header {
   vertical-align: middle;
 }
 
-input:hover {
+button:hover {
   background-color: #676767;
 }
 .sendarea {
