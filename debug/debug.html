@@ -8,16 +8,18 @@
 </head>
 <body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <form id="form_1" method="post" accept-charset="utf-8" return false>
-        <h3>SQL</h3>
-        <textarea rows="10" cols="40" name="sql" id="sql"> </textarea>
-    </form>
     <div class="inputarea">
+        <form id="form_1" method="post" accept-charset="utf-8" return false>
+            <h3>SQL</h3>
+            <textarea class="sendarea" rows="10" cols="40" name="sql" id="sql"> </textarea>
+        </form>
         <button id="ajax">実行</button>
     </div>
-    <h3>実行結果</h3>
-    <textarea rows="10" cols="40" class="tx-result" name="tx-result" id="tx-result"> </textarea>
-    <div class="result"></div>
+    <div class="result">
+        <h3>実行結果</h3>
+        <textarea rows="10" cols="40" class="tx-result" name="tx-result" id="tx-result"> </textarea>
+    </div>
+    <!--div class="result"></div-->
 
     <script type="text/javascript">
 
