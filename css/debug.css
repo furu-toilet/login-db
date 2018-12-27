@@ -22,11 +22,11 @@ body {
 }
 
 .sendarea {
-  height: 500px;
+  height: 100%;
 }
 
 .tx-result {
-  height: 500px;
+  height: 100%;
 }
 
 textarea {
