@@ -48,7 +48,7 @@ if (isset($_POST["login"])) {
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>会員登録</title>
+    <title>DB管理者ログイン用ページ</title>
     <link rel="stylesheet" href="./css/inreg.css">
     <!-- bootstrap? -->
     <!-- link rel="stylesheet" href="styles.css"-->
