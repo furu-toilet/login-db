@@ -22,15 +22,27 @@ body {
 }
 
 .sendarea {
-  height: 380px;
+  height: 500px;
 }
-textarea {
+
+.tx-result {
+  height: 500px;
+}
+
+.result {
+  text-align: right;
+}
+
+.inputarea {
   text-align: left;
-  width: 30%;
+}
+
+textarea {
+  width: 50%;
   height: 380px;
   background-color: #000044;
   color: whitesmoke;
-  font-size: 15px;
+  font-size: 18px;
   font-family: "Open Sans", sans-serif;
 }
 
@@ -39,4 +51,6 @@ textarea {
   margin-bottom: 30px;
   margin-top: 20px;
 }
+
+
 
