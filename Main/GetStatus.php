@@ -13,7 +13,7 @@ Common.phpとこのファイルは同一ディレクトリに保存してくだ�
 */
 
 
-require_once "Common.php";      //～～おまじない～～
+require_once "../php/Common.php";      //～～おまじない～～
 $db = new Common();             //
 $status = null;
 
