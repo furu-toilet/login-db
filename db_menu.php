@@ -13,27 +13,9 @@ if(isset($_POST['sql_submit'])){    //実行ボタン後の処理
 	$db->db_close();          //接続切断
 }
 
-if(isset($_POST['sql_reset'])){     //リセットボタン後の処理
-  
-  
-}
-
 function h($str){                   //HTMLに文字列出力
 	return htmlspecialchars($str,ENT_QUOTES,'UTF-8');
 }
-
-function time_menu(){
-    //UNIX　TIMESTAMPE　を取得
-    $dt = new DateTime();
-
-    // Asia/Tokyoにタイムゾーンを設定
-    echo $dt->setTimeZone(new DateTimeZone('Asia/Tokyo'))->format('Y-m-d H:i') . "\n";
-
-    //出力結果
-    //2010-06-07 15:40
-    
-}
-
 
 ?>
 
@@ -49,10 +31,6 @@ function time_menu(){
 	<header>
 	<h1>PSMS  PostgreSQLManegmentStudio</h1>
         <input class="left-in" type="submit" name="info_menu" value="ユーザ情報" onclick="location.href='./php/info.php'">
-        <script language="javascript">
-            setTimeout("Location.reload()",1000*5);
-<?php time_menu(); ?>
-        </script>
 	</header>
     	<iframe class="leftframe" src="left.php"></iframe>
     	<div class="right">
