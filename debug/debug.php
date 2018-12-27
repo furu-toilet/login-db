@@ -11,12 +11,14 @@ if(isset($_POST['sql'])){
     $data = $db->db_sql($sql);
     
     if($data == null){
-        $dump = "\n"."該当データなし";
+        //$dump = "\n"."該当データなし";
+        $dump = "該当データなし";
     }else {
-        $dump = "\n".var_dump($data);
+        //$dump = "\n".var_dump($data);
+        $dump = var_dump($data);
     }
-    $result = nl2br($str);
-    echo $result;
+    //$result = nl2br($str);
+    //echo $result;
     echo $dump;
 }else{
     echo 'FAIL TO AJAX REQUEST';
