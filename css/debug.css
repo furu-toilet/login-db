@@ -29,14 +29,6 @@ body {
   height: 500px;
 }
 
-.result {
-  text-align: right;
-}
-
-.inputarea {
-  text-align: left;
-}
-
 textarea {
   width: 50%;
   height: 380px;
