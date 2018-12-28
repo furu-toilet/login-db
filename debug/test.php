@@ -5,11 +5,11 @@ $title  = ["時間帯","使用回数","時間-分"];    //データ名称を配�
 
 require_once "../php/Common.php";
 $db  = new Common();
-$sql = " SELECT EXTRACT (HOUR FROM "StartTime") ||':00' as 時間帯,COUNT(*) 使用回数 ,sum("UsedTime")時間 
-FROM "RuiInfo" 
-WHERE CAST("StartTime" as DATE) = '2018-12-27' 
-GROUP BY EXTRACT(HOUR FROM "StartTime") 
-ORDER BY EXTRACT(HOUR FROM "StartTime");";
+$sql = "SELECT EXTRACT (HOUR FROM \"StartTime\") ||':00' as 時間帯,COUNT(*) 使用回数 ,sum(\"UsedTime\")時間 
+FROM \"RuiInfo\" 
+WHERE CAST(\"StartTime\" as DATE) = '2018-12-27' 
+GROUP BY EXTRACT(HOUR FROM \"StartTime\") 
+ORDER BY EXTRACT(HOUR FROM \"StartTime\");";
 
     $day = $db->db_sql($sql);
     
