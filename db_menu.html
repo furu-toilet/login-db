@@ -17,40 +17,44 @@
 	      <h2>SQL</h2>
 		<textarea class="sendarea" name="sql"></textarea><br>
 		<div class="right-inputarea">
-			<input class="right-in" type="submit" value="実行" name="sql_submit" id="sql_submit">
+			<input class="right-in" type="button" value="実行" name="ajax" id="ajax">
 			<input class="right-in" type="reset" value="リセット" name="sql_reset" id="sql_reset">
 		</div>
 		</form>
-      <div id="log">
-        <h2>実行結果</h2>
-
-<?php if(!empty($_POST['sql'])){           //SQL実行した場合?>       
-          <?=h('実行SQL：' . $_POST['sql'])?>	
-	  <br>
-    <?php if($db->db_msg() == null){       //エラー時の表示を制御  ?>
-	    <?=h('正常終了') ?><br>
-            <table>
-            <tr>
-        <?php foreach($result[0] as $key => $_): ?>
-            <th><?=h($key) ?></th>
-        <?php endforeach; ?>
-            </tr>
-        <?php foreach($result as $values): ?>
-            <tr>
-                <?php foreach($values as $value): ?>
-                    <td><?=h($value)?></td>
-                <?php endforeach; ?>
-            </tr>
-        <?php endforeach; ?>
-            </table>
-
-    <?php }else{  //エラーメッセージ ?>	  
-          <?= h($db->db_msg()) ?>	     
-    <?php }   //else end  ?>
-          
-<?php } ?>          
+      		<div id="log">
+        	    <h2>実行結果</h2>
+		    <textarea rows="10" cols="40" class="tx-result" name="tx-result" id="tx-result"> </textarea>
+		    <script type="text/javascript">
+			$(function(){
+			    // Ajax button click
+			    $('#ajax').on('click',function(){
+				$.ajax({
+				    url:'./db_menu.php',
+				    type:'POST',
+				    data:{
+					'sql':$('#sql').val()
+				    }
+				})
+				// Ajaxリクエストが成功した時発動
+				.done( (data) => {
+				    //$('.result').html(data);
+				    $('.tx-result').val(data);
+				    //console.log(data);
+				})
+				// Ajaxリクエストが失敗した時発動
+				.fail( (data) => {
+				    //$('.result').html(data);
+				    $('.tx-result').val(data);
+				    //console.log(data);
+				})
+				// Ajaxリクエストが成功・失敗どちらでも発動
+				.always( (data) => {
+				});
+			    });
+			});
+		    </script>
 		</div>
-</div>
+	</div>
 
 </body>
 </html>
