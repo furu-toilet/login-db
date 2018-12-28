@@ -48,3 +48,4 @@ if(!empty($sql)){           //SQL実行した場合
     }   //else end
           
 }  
+?>
