@@ -20,7 +20,6 @@ function h($str){                   //HTMLに文字列出力
 	echo $str;
 }
 
-?>
 
 
 if(!empty($sql)){           //SQL実行した場合       
