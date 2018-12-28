@@ -1,32 +1,36 @@
 <?php
-/*
-※コードについて
-###現在の###トイレの状態を取得するPHPファイルです。
-ソースコード内で以下の分を記述してください。
-require_once "GetStatus.php";
-$status = new GetStatus();  //$statusに結果が格納されます。0,1,-1のどれか
 
-想定している戻り値は空室・在室・使用不可（整備中）を想定して０，１、－１を返す。int型
+$result = array();        //グラフへ渡す結果が格納される。
+$title  = ["時間帯","使用回数","時間-分"];    //データ名称を配列に格納する。
 
-※注意
-Common.phpとこのファイルは同一ディレクトリに保存してください。
-*/
+require_once "../php/Common.php";
+$db  = new Common();
+$sql = " SELECT EXTRACT (HOUR FROM "StartTime") ||':00' as 時間帯,COUNT(*) 使用回数 ,sum("UsedTime")時間 
+FROM "RuiInfo" 
+WHERE CAST("StartTime" as DATE) = '2018-12-27' 
+GROUP BY EXTRACT(HOUR FROM "StartTime") 
+ORDER BY EXTRACT(HOUR FROM "StartTime");";
 
+    $day = $db->db_sql($sql);
+    
+    array_push($result,$title);//データ名称を格納する
 
-require_once "../php/Common.php";      //～～おまじない～～
-$db = new Common();             //
-$status = null;
+    for($i=0;$i<24;$i++)      //0:00～23:00までのデータを格納する。
+    {
+        for($j=0;$j<count($day);$j++)    //$dayのデータの数だけfor文を回す
+        {
+            if($day[$j][0] == $i.":00")    //$dayの時間帯を参照し、対応する部分にデータを格納する
+            {
+                array_push($result,[$day[$j][0],$day[$j][1],$day[$j][2]]);
+                break;        //データを格納した場合、ループを抜ける
+            }
+            else if($j==count($day)-1)    //対応するデータがなかった場合、時間帯と0,0を格納する
+            {
+                array_push($result,[$i.":00",0,0]);
+            }
+        }
+    }
 
-$sql = "SELECT \"Status\" FROM \"ToiletTerminal\"; ";      //トイレ情報テーブルからデータを持ってくるSQLを入れる。
-$result = $db->db_sql($sql);  //二次元配列を取得   
-
-if(count($result) == 1)       //1レコードを想定しているのでそれ以外は排除
- {           
-  $arr = $result[0];               //二次元配列から配列を取り出し、一次元配列にする。
-  $status = $arr['Status'];        //使用状況（int）の値を取り出す。
- }
-$db->db_close();
-
-echo json_encode( $status );
+   var_dump($result);
 
 ?>
