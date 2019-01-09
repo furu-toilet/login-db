@@ -10,10 +10,16 @@ google.setOnLoadCallback(chartstart);
 
 function chartstart(){
     Promise.all([
-      RequestStart('./chart02.php')
+        RequestStart('../php/chart02.php'),
+        RequestStart('../php/chart02.php'),
+        RequestStart('../php/chart02.php'),
+        RequestStart('../php/chart02.php')
       ]).then(
       success => {
-          datalist1 = success;
+          datalist1 = success[0];
+          datalist2 = success[1];
+          datalist3 = success[2];
+          datalist4 = success[3];
           //google.setOnLoadCallback(drawChart);
           drawChart();
       },
