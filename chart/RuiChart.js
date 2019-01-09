@@ -3,48 +3,47 @@ var datalist2;
 var datalist3;
 var datalist4;
 
-
-
+/*  corechartをロード  */
 google.load('visualization', '1', {'packages':['corechart']});
+/* コールバックで呼び出してからスタートする（忘れると動かないことも） */
 google.setOnLoadCallback(chartstart);
-
+/* 同期処理の始まり */
 function chartstart(){
     Promise.all([
-        RequestStart('../php/chart02.php'),
+        RequestStart('../php/chart02.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
         RequestStart('../php/chart02.php'),
         RequestStart('../php/chart02.php'),
         RequestStart('../php/chart02.php')
       ]).then(
-      success => {
-          datalist1 = success[0];
+      success => {                  //実行結果はsuccessの中に格納される
+          datalist1 = success[0];   //データのセット
           datalist2 = success[1];
           datalist3 = success[2];
           datalist4 = success[3];
-          //google.setOnLoadCallback(drawChart);
-          drawChart();
+          drawChart();              //グラフの描画スタート
       },
     )
 }
 
-
+/* サーバとのファイル通信用関数 */
 function RequestStart(url){       
   return new Promise((resolve,reject) => {
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
-      if(xhr.readyState ===4 && xhr.status === 200){
+      if(xhr.readyState ===4 && xhr.status === 200){    //通信成功時
         var responsedata = xhr.responseText;
-        //resolve(JSON.parse(responsedata));
           resolve(responsedata);
-      }else if(xhr.status === 404){
-        console.log(reject);
+      }else if(xhr.status === 404){     //通信エラー時
         reject("Err : Not Found");
+        console.log(reject);
       }
     }    
-    xhr.open("GET",url,true);
+    xhr.open("GET",url,true);   //urlをもとに接続
     xhr.send(null);
   });
 }
 
+/* グラフ描画用関数 */
 function drawChart(){
     /* データセット */
     var DayCountData1       = google.visualization.arrayToDataTable(JSON.parse(datalist1));
