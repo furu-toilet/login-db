@@ -48,9 +48,9 @@ function RequestStart(url){
 function drawChart(){
     /* データセット */
     var DayCountData1       = google.visualization.arrayToDataTable(JSON.parse(datalist1));
-    var DayTimeData2        = google.visualization.arrayToDataTable(JSON.parse(datalist1));
-    var WeeklyCountData3    = google.visualization.arrayToDataTable(JSON.parse(datalist1));
-    var WeeklyTimeData4     = google.visualization.arrayToDataTable(JSON.parse(datalist1));
+    var DayTimeData2        = google.visualization.arrayToDataTable(JSON.parse(datalist2));
+    var WeeklyCountData3    = google.visualization.arrayToDataTable(JSON.parse(datalist3));
+    var WeeklyTimeData4     = google.visualization.arrayToDataTable(JSON.parse(datalist4));
     
     // オプションの設定
     var DayCountOptions1 = {
