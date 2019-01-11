@@ -5,7 +5,7 @@ Class Common {
   private $stmt = null;         //PDOStatmant
   private $sql = null;          //SQL
   private $errmsg = null;       //エラーメッセージ
-  private $flg = false;          //環境設定FLG true or false
+  private $flg = true;          //環境設定FLG true or false
 
   function Common(){
     /* $flg=trueならローカルMySQlで接続 */
@@ -40,7 +40,7 @@ Class Common {
 
 
 	/*  SQL文をDBに投げる （戻り値有 SELECT） */
-function db_sql($sql){
+    function db_sql($sql){
     try{
         $this->stmt = $this->pdo->prepare($sql);                    //SQLセット
         $this->stmt->execute();                                     //SQL実行
