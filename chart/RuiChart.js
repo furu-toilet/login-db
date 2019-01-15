@@ -10,10 +10,10 @@ google.setOnLoadCallback(chartstart);
 /* 同期処理の始まり */
 function chartstart(){
     Promise.all([
-        RequestStart('./chart02.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
-        RequestStart('./chart02.php'),
-        RequestStart('./chart02.php'),
-        RequestStart('./chart02.php')
+        RequestStart('./../RasberryPie/GetDailyTime.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
+        RequestStart('./../RasberryPie/GetDailyCount.php'),
+        RequestStart('./../RasberryPie/GetWeeklyTime.php'),
+        RequestStart('./../RasberryPie/GetWeeklyCount.php')
       ]).then(
       success => {                  //実行結果はsuccessの中に格納される
           datalist1 = success[0];   //データのセット
