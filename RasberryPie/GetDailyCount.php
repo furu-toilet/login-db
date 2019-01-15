@@ -9,7 +9,7 @@ GetDailyCount.phpについて
 
 require_once "Common.php";      //～～おまじない～～
 $db = new Common();             //
-$result = null;
+$result = array();
 $timezone = 24;   //グラフのメモリを何時まで表示するか決める。
 
 
@@ -59,8 +59,6 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。
     $icount++;
 } 
 
-//echo json_encode( $result );
-
+//echo json_encode( $result);
 var_dump($result);
-
 ?>
