@@ -47,11 +47,11 @@ $icount = 0;
 foreach($result as $i)      //0:00～23:00までのデータを格納する。
 {    
      $jcount = 0;    //foreach文を何回実行したかをカウントする。
-    foreach($day as list)    //$dayのデータの数だけforeach文を回す
+    foreach($daycount as list($a,$b))    //$dayのデータの数だけforeach文を回す
     {
-        if(list[0] == ($icount - 1).":00")    //$dayの時間帯を参照し、対応する部分にデータを格納する
+        if($a == ($icount - 1).":00")    //$dayの時間帯を参照し、対応する部分にデータを格納する
         {                
-            $result[$icount]=list;
+            $result[$icount]=[$a,$b];
             break;        //データを格納した場合、ループを抜ける
         }            
         $jcount++;
@@ -59,8 +59,6 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。
     $icount++;
 } 
 
-//echo json_encode( $result );
-
-var_dump($result);
+echo json_encode( $result );
 
 ?>
