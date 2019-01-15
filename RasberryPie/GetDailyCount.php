@@ -61,6 +61,6 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。
 
 //echo json_encode( $result );
 
-ver_dump($result);
+var_dump($result);
 
 ?>
