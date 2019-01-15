@@ -49,5 +49,5 @@ $db->db_close();
 
 //echo json_encode($result);
 
-echo $result;
+var_dump($result);
 ?>
