@@ -11,7 +11,7 @@ Class Common {
     /* $flg=trueならローカルMySQlで接続 */
     /* $flg=falseならリモートPostgreSQLで接続 */
     
-    if($this->flg == true){           //ローカルならtrue
+    if($this->flg == false){           //ローカルならtrue
         /* ローカルMySQL接続 */
         try{
             $dsn = 'mysql:dbname=toilet;host=localhost;charset=utf8mb4';    //utf-8にて実行
