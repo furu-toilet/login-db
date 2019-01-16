@@ -50,10 +50,8 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。  
 {    
     foreach($daycount as $list)    //$daycountのデータの数だけforeach文を回す    j
     {
-        echo "2nd foreach";
         if(strcmp($list['?column?'],$icount.":00") == 0)    //$listの時間帯を参照し、対応する部分にデータを格納する
         {                
-            echo "みっけ";
             $result[$icount + 1][1] = $list['count'];
             break;        //データを格納した場合、ループを抜ける
         }            
