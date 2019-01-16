@@ -51,7 +51,7 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。  
     foreach($daycount as $list)    //$daycountのデータの数だけforeach文を回す    j
     {
         echo "2nd foreach";
-        if($list[0] == $icount.":00")    //$listの時間帯を参照し、対応する部分にデータを格納する
+        if(strcmp($list[0],$icount.":00") == 0)    //$listの時間帯を参照し、対応する部分にデータを格納する
         {                
             echo "みっけ";
             $result[$icount]=$list;
