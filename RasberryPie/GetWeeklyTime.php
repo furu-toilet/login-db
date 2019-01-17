@@ -13,6 +13,8 @@ ex）[
     ]
 
 */
+require_once "Common.php";
+$db = new Common();
 
 $sql = "
 SELECT EXTRACT (HOUR FROM \"StartTime\")  ||':00',sum(\"UsedTime\")
