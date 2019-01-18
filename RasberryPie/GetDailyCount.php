@@ -11,8 +11,6 @@ require_once "Common.php";      //～～おまじない～～
 $db = new Common();             //
 $result = array();
 $timezone = 24;   //グラフのメモリを何時まで表示するか決める。
-$jcount = 0;
-$icount = 0;
 
 
 /*グラフ用データの土台を作成する    
@@ -40,7 +38,7 @@ $daycount = $db->db_sql($sql);    //二次元配列を取得。　値は 時間�
 
 array_push($result,array("時間帯","使用回数"));
 
-for($i=0;$i<24;$i++)
+for($i=0;$i<$timezone;$i++)     //時間帯と使用回数 0をセットする
 {
     array_push($result,[$i.":00",0]);
 }
@@ -59,5 +57,6 @@ foreach($result as $i)      //0:00～23:00までのデータを格納する。  
     $icount++;
 } 
 
-echo json_encode( $result);
+echo json_encode( $result);//jsonで使用する型に変換する。
+
 ?>
