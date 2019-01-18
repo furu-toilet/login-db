@@ -44,7 +44,7 @@ for($i=0;$i<$timezone;$i++)     //時間帯と使用時間 0をセットする
 $icount = 0;
 foreach($result as $i)      //0:00～23:00までのデータを格納する。    i
 {    
-    foreach($daycount as $list)    //$daycountのデータの数だけforeach文を回す    j
+    foreach($daysum as $list)    //$daycountのデータの数だけforeach文を回す    j
     {
         if(strcmp($list['?column?'],$icount.":00") == 0)    //$listの時間帯を参照し、対応する部分にデータを格納する
         {                
