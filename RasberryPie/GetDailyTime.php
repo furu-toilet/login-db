@@ -29,30 +29,28 @@ SELECT EXTRACT (HOUR FROM \"StartTime\")  ||':00',sum(\"UsedTime\")
 FROM \"RuiInfo\"
 WHERE CAST(\"StartTime\" as DATE) = CAST(CURRENT_TimeStamp + '9 hours'  as DATE)
 GROUP BY EXTRACT(HOUR FROM \"StartTime\")
-ORDER BY EXTRACT(HOUR FROM \"StartTime\") 
+ORDER BY EXTRACT(HOUR FROM \"StartTime\") ;
 ";      //DBManagerからSQL文が決まったらここに入力！
 
 $daysum = $db->db_sql($sql);    //連想配列を取得   値は時間帯(Str型),利用時間(int型)
 
-array_push($result,array("時間帯","使用回数"));
+array_push($result,array("時間帯","使用時間"));
 
-for($i=0;$i<24;$i++)
+for($i=0;$i<$timezone;$i++)     //時間帯と使用時間 0をセットする
 {
     array_push($result,[$i.":00",0]);
 }
 
 $icount = 0;
-foreach($result as $i)      //0:00～23:00までのデータを格納する。
+foreach($result as $i)      //0:00～23:00までのデータを格納する。    i
 {    
-     $jcount = 0;    //foreach文を何回実行したかをカウントする。
-    foreach($daysum as list($a,$b))    //$dayのデータの数だけforeach文を回す
+    foreach($daycount as $list)    //$daycountのデータの数だけforeach文を回す    j
     {
-        if($a == ($icount - 1).":00")    //$dayの時間帯を参照し、対応する部分にデータを格納する
+        if(strcmp($list['?column?'],$icount.":00") == 0)    //$listの時間帯を参照し、対応する部分にデータを格納する
         {                
-            $result[$icount]=[$a,$b];
+            $result[$icount + 1][1] = $list['sum'];
             break;        //データを格納した場合、ループを抜ける
         }            
-        $jcount++;
     }
     $icount++;
 } 
