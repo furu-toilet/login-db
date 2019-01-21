@@ -6,7 +6,7 @@ URLを開くと自動で状態がセットされます。
 ※注意
 Common.phpとこのファイルは同一ディレクトリに保存してください。
 */
-require_once "Common.php";      //～～おまじない～～
+require_once "./../php/Common.php";      //～～おまじない～～
 $db = new Common();             //
 
 $sql = 'SELECT "Status" FROM "ToiletTerminal"';      //DBManagerからSQL文が決まったらここに入力！ 現在のトイレの状態を取得するクエリ（実行結果：-1,0,1　のどれか）
