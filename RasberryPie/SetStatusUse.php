@@ -6,7 +6,7 @@ URLを開くと自動で状態がセットされます。
 ※注意
 Common.phpとこのファイルは同一ディレクトリに保存してください。
 */
-require_once "Common.php";      //～～おまじない～～
+require_once "./../php/Common.php";      //～～おまじない～～
 $db = new Common();             //
 
 $sql = 'SELECT "Status" 
