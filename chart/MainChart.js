@@ -37,7 +37,7 @@ function RequestStart(url){
 /* グラフ描画用関数 */
 function drawChart(){
     /* データセット */
-    var Data1 = google.visualization.arrayToDataTable(JSON.parse(datalist1));
+    var data1 = google.visualization.arrayToDataTable(JSON.parse(datalist1));
     
    // オプションの設定
     var options1 = {
