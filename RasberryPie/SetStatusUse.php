@@ -22,7 +22,7 @@ if($status !== 1){   //在室ならDBを操作しない（誤作動の可能性�
             INSERT INTO "RuiInfo" ("TanmatsuInfo","Date","StartTime","EndTime","UsedTime")
             SELECT "TanmatsuInfo",CAST("UpdateTime"as Date),"UpdateTime",(NULL),(NULL)
             FROM   "ToiletTerminal";
-           '
+           ';
     $db->db_sql($sql);    //使用状況のセット実行
 }
 
