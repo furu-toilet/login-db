@@ -56,7 +56,7 @@ function drawChart(){
    };
 
     // 指定されたIDの要素に棒グラフを作成
-    var chart1 = new google.visualization.LineChart(document.getElementById('chart1_div'));
+    var chart1 = new google.visualization.ColumnChart(document.getElementById('chart1_div'));
 
     //グラフの描画
     chart1.draw(data1, options1);
