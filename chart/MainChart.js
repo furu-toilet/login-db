@@ -41,7 +41,7 @@ function drawChart(){
     
    // オプションの設定
     var options1 = {
-      title : '2ヶ月累積データ',
+      title : '1日の累積データ',
      series: {
       0:{targetAxisIndex:0},     // 第1系列は左のY軸を使用
       1:{targetAxisIndex:1,
