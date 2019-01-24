@@ -7,15 +7,15 @@ var datalist4;
 // name:visualization(可視化),version:バージョン(1),packages:パッケージ(corechart)
 google.load('visualization', '1', {'packages':['corechart']});
 // グラフを描画する為のコールバック関数を指定
-google.setOnLoadCallback(drawChart);
+google.setOnLoadCallback(chartstart);
 
 /* 同期処理の始まり */
 function chartstart(){
     Promise.all([
-        RequestStart('../RasberryPie/GetDailyCount.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
-        RequestStart('../RasberryPie/GetDailyTime.php'),
-        RequestStart('../RasberryPie/GetWeeklyCount.php'),
-        RequestStart('../RasberryPie/GetWeeklyTime.php')
+        RequestStart('../../RasberryPie/GetDailyCount.php'), //全てのRequestStartが終了してからthen以降の処理へ（同期）
+        RequestStart('../../RasberryPie/GetDailyTime.php'),
+        RequestStart('../../RasberryPie/GetWeeklyCount.php'),
+        RequestStart('../../RasberryPie/GetWeeklyTime.php')
       ]).then(
       success => {                  //実行結果はsuccessの中に格納される
           datalist1 = success[0];   //データのセット
