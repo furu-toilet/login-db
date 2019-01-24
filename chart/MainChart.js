@@ -41,19 +41,19 @@ function drawChart(){
     
    // オプションの設定
     var options1 = {
-        title : '2ヶ月累積データ',
-        series: {
-        0:{targetAxisIndex:0,
-          type: "line"},     // 第1系列は左のY軸を使用
-        1:{targetAxisIndex:1},         // 第2系列は右のY時を使用
-    },
-        hAxis: {title: '時間帯'},
-        vAxes: {
-          // 0:左のY軸。1:右のY軸
-          0: {title: '回数'},
-          1: {title: '時間[分]'}
-        },
-    };
+      title : '2ヶ月累積データ',
+     series: {
+      0:{targetAxisIndex:0},     // 第1系列は左のY軸を使用
+      1:{targetAxisIndex:1,
+       type: "line"},         // 第2系列は右のY時を使用
+     },
+     hAxis: {title: '時間帯'},
+     vAxes: {
+       // 0:左のY軸。1:右のY軸
+       0: {title: '回数'},
+       1: {title: '時間[分]'}
+     },
+   };
 
     // 指定されたIDの要素に棒グラフを作成
     var chart1 = new google.visualization.LineChart(document.getElementById('chart1_div'));
