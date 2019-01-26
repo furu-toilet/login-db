@@ -10,9 +10,10 @@ $data = $db->db_sql($sql);
 
 $cnt = 0;
 $clm = null;
-foreach($data as $column  => $_){
+foreach($data as $column  => $value){
     //array_push($clm,$column);
-    var_dump( $column );
+    echo $column;
+    echo \n;
 }
 $result = $clm;
 
