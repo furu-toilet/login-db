@@ -25,7 +25,6 @@ header('Content-type: text/plain; charset= UTF-8');
 //}
 
 function arr_change($arr){
-    $result = null;
     $cnt = 0;
     $clm = null;
     foreach($arr as $column  => $_){
@@ -33,7 +32,7 @@ function arr_change($arr){
     }
     $result = $clm;
     
-    return $result
+    return $result;
 }
 
 ?>
