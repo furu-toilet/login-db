@@ -17,7 +17,8 @@ if(isset($_POST['sql'])){
     }
     //$result = nl2br($str);
     //echo $result;
-    echo arr_change($data);
+    //echo arr_change($data);
+    var_dump(arr_change($data));
 }else{
     echo 'FAIL TO AJAX REQUEST';
 }
