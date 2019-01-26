@@ -12,12 +12,12 @@ $cnt = 0;
 $clm = null;
 foreach($data as $column  => $_){
     //array_push($clm,$column);
-    echo $column;
+    var_dump( $column );
 }
 $result = $clm;
 
 
-echo $result;
-var_dump($data);
+//echo $result;
+//var_dump($data);
     
 ?>
