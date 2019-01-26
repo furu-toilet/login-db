@@ -11,7 +11,7 @@ $data = $db->db_sql($sql);
 $cnt = 0;
 $clm = null;
 foreach($data as $column  => $_){
-    $clm = array_push($column);
+    array_push($clm,$column);
 }
 $result = $clm;
 
