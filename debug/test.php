@@ -32,7 +32,7 @@ function arr_change($arr){
     }
     $result = $clm;
     
-    return $result
+    return $result;
 }
 
 ?>
