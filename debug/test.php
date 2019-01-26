@@ -28,12 +28,12 @@ function arr_change($arr){
     $result = null;
     $cnt = 0;
     $clm = null;
-    foreach($arr as $column){
-        $clm = array_push($column[0]);
+    foreach($arr as $column  => $_){
+        $clm = array_push($column);
     }
     $result = $clm;
     
-    return $result;
+    return $result
 }
 
 ?>
