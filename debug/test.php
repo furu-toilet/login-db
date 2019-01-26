@@ -16,6 +16,6 @@ foreach($arr as $column  => $_){
 $result = $clm;
 
 
-var_dump($result);
+echo $result;
     
 ?>
