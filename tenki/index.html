@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        function weatherForecast(city) {
+            var response = UrlFetchApp.fetch("http://weather.livedoor.com/forecast/webservice/json/v1?city=" + city); //URL+cityID
+            var json=JSON.parse(response.getContentText());
+            
+            Logger.log(json["title"]);
+              Logger.log(json["description"]);
+              Logger.log(json["forecasts"]);
+        }
+        
+        weatherForecast(130010);
+    </script>
+    
+</body>
+</html>
